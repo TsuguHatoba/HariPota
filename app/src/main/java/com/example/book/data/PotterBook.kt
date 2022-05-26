@@ -75,7 +75,4 @@ data class PotterBookItem(
 
 	@Json(name="eyeColour")
 	val eyeColour: String? = null,
-
-	@Json(name="yearOfBirth")
-	val yearOfBirth: Int? = null
 )

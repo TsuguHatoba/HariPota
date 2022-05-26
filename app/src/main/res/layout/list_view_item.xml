@@ -29,7 +29,7 @@
             android:padding="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="18sp"
-            android:text="@{book.patronus}"
+            android:text="@{book.name}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Judul disini" />

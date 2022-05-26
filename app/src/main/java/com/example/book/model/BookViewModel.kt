@@ -1,5 +1,6 @@
 package com.example.book.model
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -22,10 +23,6 @@ class BookViewModel : ViewModel() {
     private val _books = MutableLiveData<PotterBookItem>()
     val books: LiveData<PotterBookItem> = _books
 
-    fun listToString(list: List<String>): String {
-        return list.joinToString("\n")
-    }
-
     fun getBookList() {
         viewModelScope.launch {
             _status.value = BookApiStatus.LOADING
@@ -35,6 +32,7 @@ class BookViewModel : ViewModel() {
             } catch (e: Exception) {
                 _book.value = listOf()
                 _status.value = BookApiStatus.ERROR
+                Log.e("Pesan Error :", "${e.message}")
             }
         }
     }
